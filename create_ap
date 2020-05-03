@@ -27,7 +27,7 @@ SCRIPT_UMASK=0077
 umask $SCRIPT_UMASK
 
 usage() {
-clear
+
     echo "   .;'             (Mr.exe)             ;,    "
     echo "  .;'  ,;'                           ;,   ;, "
     echo " .;'  ,;'  ,;'                   ;,   ;,   ;,   "
@@ -1566,7 +1566,16 @@ if [[ $NO_VIRT -eq 0 ]]; then
     # the need of MAC address, so we set it before we create the virtual interface.
     if networkmanager_is_running && [[ $NM_OLDER_VERSION -eq 0 ]]; then
         echo -n "Network Manager found, set ${VWIFI_IFACE} as unmanaged device... "
+    echo "   .;'             (Mr.exe)             ;,    "
+    echo "  .;'  ,;'                           ;,   ;, "
+    echo " .;'  ,;'  ,;'                   ;,   ;,   ;,   "
+    echo " ::   ::   :    +  + ( ) +  +     :   ::   ::    "
+    echo " ':.  ':.  ':.  +  + /_\\ +  +  ,:'  ,:'  ,:'  " 
+    echo "  ':.  ':.     +  + /___\\ +  +     ,:'  ,:' "
+    echo "   ':.        +  + /_____\\ +  +       ,:'  "
+    echo "             +  + /       \\ +  +          "
         networkmanager_add_unmanaged ${VWIFI_IFACE}
+	
         # do not call networkmanager_wait_until_unmanaged because interface does not
         # exist yet
         echo "DONE"
